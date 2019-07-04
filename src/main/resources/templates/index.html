@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>首页</h1>
+
+    <span th:text="${#authentication.principal.name}">xxxxx</span>
+    <a href="/logout">注销</a>
+    <hr/>
+
+    <a sec:authorize-url="/user/insert" href="/user/insert">添加</a>
+    <a sec:authorize-url="/user/delete" href="/user/delete">删除</a>
+    <a sec:authorize-url="/user/update" href="/user/update">修改</a>
+    <a sec:authorize-url="/user/query" href="/user/query">查询</a>
+
+</body>
+</html>
